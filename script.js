@@ -1,3 +1,11 @@
+// Generate a random number between 1 and 10
+const randomNum = Math.floor(Math.random() * 45) + 1;
+
+// Set the background image of the body
+document.body.style.backgroundImage = `url("assets/wallpaper/${randomNum}.jpeg")`;
+document.body.style.backgroundSize = "cover";
+document.body.style.backgroundPosition = "center";
+
 function updateBatteryIcon(batteryLevel) {
   const percentageElement = document.querySelector('.percentage');
   percentageElement.textContent = Math.round(batteryLevel) ; // Update the percentage text
