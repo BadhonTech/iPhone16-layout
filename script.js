@@ -8,13 +8,13 @@ document.body.style.backgroundPosition = "center";
 
 function updateBatteryIcon(batteryLevel) {
   const percentageElement = document.querySelector('.percentage');
-  percentageElement.textContent = Math.round(batteryLevel) ; // Update the percentage text
+  percentageElement.textContent = Math.round(batteryLevel); // Update the percentage text
 }
 
 function getBatteryStatus() {
-  navigator.getBattery().then(function(battery) {
+  navigator.getBattery().then(function (battery) {
     const batteryLevel = battery.level * 100; // Get battery percentage (0-1 scale and convert to percentage)
-    
+
     // Update the battery percentage text
     updateBatteryIcon(batteryLevel);
   });
@@ -67,49 +67,66 @@ fetch(API_URL)
     };
 
     // Log results (or use in your app)
-    console.log('Current Weather in Dhaka:');
     temp = Math.floor(`${weather.temp}`);
     condition = weather.condition;
     weatherIcon = weather.icon;
     wind = weather.windSpeed;
-    
-   w = document.querySelectorAll(".weather-info *");
-   w[1].textContent = temp + "°";
-   w[2].src = weatherIcon;
-   w[3].textContent = condition + " " + wind +"m/s";
+
+    w = document.querySelectorAll(".weather-info *");
+    w[1].textContent = temp + "°";
+    w[2].src = weatherIcon;
+    w[3].textContent = condition + " " + wind + "m/s";
   })
   .catch(error => console.error('Error fetching data:', error));
-  
-  
-  // fullScreen
-  
-  document.getElementById('fullscreen-button').addEventListener('click', () => {
-    const element = document.documentElement; // Targets the entire page
-    const button = document.getElementById('fullscreen-button');
 
-    if (!document.fullscreenElement) {
-        // Enter fullscreen
-        if (element.requestFullscreen) {
-            element.requestFullscreen();
-        } else if (element.mozRequestFullScreen) { // Firefox
-            element.mozRequestFullScreen();
-        } else if (element.webkitRequestFullscreen) { // Chrome, Safari, Opera
-            element.webkitRequestFullscreen();
-        } else if (element.msRequestFullscreen) { // IE/Edge
-            element.msRequestFullscreen();
-        }
-        button.textContent = 'Close'; // Change button text
-    } else {
-        // Exit fullscreen
-        if (document.exitFullscreen) {
-            document.exitFullscreen();
-        } else if (document.mozCancelFullScreen) { // Firefox
-            document.mozCancelFullScreen();
-        } else if (document.webkitExitFullscreen) { // Chrome, Safari, Opera
-            document.webkitExitFullscreen();
-        } else if (document.msExitFullscreen) { // IE/Edge
-            document.msExitFullscreen();
-        }
-        button.textContent = 'Fullscreen'; // Change button text back
+
+// fullScreen
+
+document.getElementById('fullscreen-button').addEventListener('click', () => {
+  const element = document.documentElement; // Targets the entire page
+  const button = document.getElementById('fullscreen-button');
+
+  if (!document.fullscreenElement) {
+    // Enter fullscreen
+    if (element.requestFullscreen) {
+      element.requestFullscreen();
+    } else if (element.mozRequestFullScreen) { // Firefox
+      element.mozRequestFullScreen();
+    } else if (element.webkitRequestFullscreen) { // Chrome, Safari, Opera
+      element.webkitRequestFullscreen();
+    } else if (element.msRequestFullscreen) { // IE/Edge
+      element.msRequestFullscreen();
     }
+    button.textContent = 'Close'; // Change button text
+  } else {
+    // Exit fullscreen
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    } else if (document.mozCancelFullScreen) { // Firefox
+      document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) { // Chrome, Safari, Opera
+      document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) { // IE/Edge
+      document.msExitFullscreen();
+    }
+    button.textContent = 'Fullscreen'; // Change button text back
+  }
 });
+
+
+// Date 
+let eDay = document.getElementById('c-day');
+let eMon = document.getElementById('c-month');
+let eDate = document.getElementById('c-date');
+
+let monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+let dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+let day = dayNames[time.getDay()];
+let month = monthNames[time.getMonth()];
+let date = time.getDate();
+
+eDay.textContent = day;
+eMon.textContent = month;
+eDate.textContent = date;
