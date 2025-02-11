@@ -79,3 +79,37 @@ fetch(API_URL)
    w[3].textContent = condition + " " + wind +"m/s";
   })
   .catch(error => console.error('Error fetching data:', error));
+  
+  
+  // fullScreen
+  
+  document.getElementById('fullscreen-button').addEventListener('click', () => {
+    const element = document.documentElement; // Targets the entire page
+    const button = document.getElementById('fullscreen-button');
+
+    if (!document.fullscreenElement) {
+        // Enter fullscreen
+        if (element.requestFullscreen) {
+            element.requestFullscreen();
+        } else if (element.mozRequestFullScreen) { // Firefox
+            element.mozRequestFullScreen();
+        } else if (element.webkitRequestFullscreen) { // Chrome, Safari, Opera
+            element.webkitRequestFullscreen();
+        } else if (element.msRequestFullscreen) { // IE/Edge
+            element.msRequestFullscreen();
+        }
+        button.textContent = 'Close'; // Change button text
+    } else {
+        // Exit fullscreen
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+        } else if (document.mozCancelFullScreen) { // Firefox
+            document.mozCancelFullScreen();
+        } else if (document.webkitExitFullscreen) { // Chrome, Safari, Opera
+            document.webkitExitFullscreen();
+        } else if (document.msExitFullscreen) { // IE/Edge
+            document.msExitFullscreen();
+        }
+        button.textContent = 'Fullscreen'; // Change button text back
+    }
+});
