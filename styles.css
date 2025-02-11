@@ -20,19 +20,20 @@
 html, body {
   height: 100%;
   margin: 0;
+  padding: 0;
   overflow: hidden; /* Hides the scrollbar and disables scrolling */
 }
 body {
   height: 100%;
   height: 100vh;
-  font-family: 'sf-bold';
+  font-family: 'sf-semibold';
   color: #fff;
   background: url("Red Blue iPhone 14 Pro Max Wallpaper 4K HD.jpeg") no-repeat;
   background-position: center;
   background-size: cover;
 }
 
-.app {
+.dock img {
   width: 60px;
   height: 60px;
 }
@@ -83,3 +84,69 @@ body {
   backdrop-filter: blur(10px);
   border-radius: 30px;
 }
+
+.widget-warp {
+  width: 100%;
+  height: 190px;
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 10px;
+}
+.weather {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 170px;
+  height: 170px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #3a5c9a, #90b1ec);  
+}
+.weather-info {
+  position: relative;
+  width: 130px;
+  height: 140px;
+}
+
+.weather-info img {
+  width:60px;
+  height:60px;
+  position: relative;
+  top:-10px;
+}
+.weather-info p {
+  position: relative;
+  bottom: 20px;
+}
+.weather-info *{
+  margin: 0;
+  padding: 0;
+}
+.calendar {
+  height: 170px;
+  width: 170px;
+  border-radius: 24px;
+  position: relative;
+  background: linear-gradient(135deg, #ffcc99, #ff9966);
+}
+.weather:before {
+  content: "Weather";
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+.calendar:before {
+  content: "calendar";
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
