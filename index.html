@@ -8,24 +8,24 @@
 </head>
 <body>
   <main class="main">
-    <div class="status-bar">
+    <section class="status-bar">
       <div class="status-left">
         <div class="clock">
           12:00
         </div>
       </div>
       <div class="status-right">
-        <img src="assets/ico/Mobile Signal.svg" alt="" />
-      <img src="assets/ico/Wifi.svg" alt="" />
-    <span class="percentage">20%</span>
+        <img src="assets/ico/Mobile Signal.svg"  />
+      <img src="assets/ico/Wifi.svg"  />
+    <span class="percentage">100%</span>
 
     <svg width="25" height="13" viewBox="0 0 25 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path fill-rule="evenodd" clip-rule="evenodd" d="M0 4C0 1.79086 1.79086 0 4 0H18C20.2091 0 22 1.79086 22 4V9C22 11.2091 20.2091 13 18 13H4C1.79086 13 0 11.2091 0 9V4Z" fill="#B2B2B2" />
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M0 4C0 1.79086 1.79086 0 4 0H18C20.2091 0 22 1.79086 22 4V9C22 11.2091 20.2091 13 18 13H4C1.79086 13 0 11.2091 0 9V4Z" fill="#ffffff" />
       <path d="M0 4C0 1.79086 1.79086 0 4 0H16V13H4C1.79086 13 0 11.2091 0 9V4Z" fill="white" />
-      <path d="M23 4.80768V8.8657C23.8164 8.52201 24.3473 7.72249 24.3473 6.83669C24.3473 5.95089 23.8164 5.15137 23 4.80768Z" fill="#B2B2B2" />
+      <path d="M23 4.80768V8.8657C23.8164 8.52201 24.3473 7.72249 24.3473 6.83669C24.3473 5.95089 23.8164 5.15137 23 4.80768Z" fill="#ffffff" />
     </svg>
   </div>
-</div>
+</section>
     <section class="widget-warp">
       <div class="weather">
         <div class="weather-info">
@@ -43,19 +43,35 @@
         <h1 id="c-date">1</h1>
       </div>
     </section>
-    <section class="app-warp">
+    <section class="music-s">
+      <div class="music-bg">
+       <audio id="audioPlayer" style="display: none;" controls></audio>
+        <div class="music-box mbone">
+        <img src="assets/media/shigure-ui-dance.gif"  class="music-album album-art">
+        </div>
+        <div class="music-box  mbtwo">
+          <h1 class="music-title">Alone</h1>
+          <h3 class="music-artist">Alen Walker</h3>
+          <div class="music-ppn">
+            <img src="assets/ico/Skip Back.svg" class="pre ppn">
+            <img src="assets/ico/Pause.svg" class="p-p ppn">
+            <img src="assets/ico/Skip Fwd.svg" class="nex ppn">
+          </div>
+        </div>
+      </div>
     </section>
+    <section class="app-box"></section>
     <section class="search">
         <button id="fullscreen-button">Fullscreen</button>
       </section>
-    <div class="dock-warp">
+    <section class="dock-warp">
   <div class="dock">
-    <img src="assets/ico/20.png" alt="" >
-    <img src="assets/ico/21.png" alt="" >
-    <img src="assets/ico/1.png" alt="" >
-    <img src="assets/ico/14.png" alt="" >
+    <img src="assets/ico/20.png">
+    <img src="assets/ico/21.png">
+    <img src="assets/ico/1.png">
+    <img src="assets/ico/14.png">
   </div>
-</div>
+</section>
 </main>
 <script src="script.js" type="text/javascript" charset="utf-8"></script>
 </body>

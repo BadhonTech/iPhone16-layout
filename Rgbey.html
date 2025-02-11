@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Player</title>
+  <style>
+    /* Basic styling */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #1a1a1a;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .music-s {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #333;
+      padding: 20px;
+      border-radius: 10px;
+      width: 300px;
+    }
+
+    .music-album {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .music-title, .music-artist {
+      margin-top: 10px;
+      font-size: 20px;
+      text-align: center;
+    }
+
+    .music-ppn img {
+      cursor: pointer;
+      width: 30px;
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="music-s">
+<div class="music-bg">
+  <audio id="audioPlayer" style="display: none;" controls></audio>
+  <div class="music-box mbone">
+    <img src="assets/thumb/blue.jpeg" class="music-album album-art">
+  </div>
+  <div class="music-box mbtwo">
+    <h1 class="music-title">Alone</h1>
+    <h3 class="music-artist">Alen Walker</h3>
+    <div class="music-ppn">
+      <img src="assets/ico/Skip Back.svg" class="pre ppn">
+      <img src="assets/ico/Play.svg" class="p-p ppn">
+      <img src="assets/ico/Skip Fwd.svg" class="nex ppn">
+    </div>
+  </div>
+</div>  </section>
+
+  <script>
+    // Array to store songs and their information
+    const songs = [
+      {
+        title: 'Alone',
+        artist: 'Alen Walker',
+        path: 'assets/music/$.mp3',
+        albumArt: 'assets/thumb/blue.jpeg',
+      },
+      {
+        title: 'Faded',
+        artist: 'Alen Walker',
+        path: 'assets/music/faded.mp3',
+        albumArt: 'assets/thumb/faded.jpeg',
+      }
+    ];
+
+    let currentSongIndex = 0;
+    const audioPlayer = document.getElementById('audioPlayer');
+    
+    // Function to load the song information
+    function loadSong(songIndex) {
+      const song = songs[songIndex];
+      document.getElementById('songTitle').textContent = song.title;
+      document.getElementById('songArtist').textContent = song.artist;
+      document.getElementById('albumArt').src = song.albumArt;
+      audioPlayer.src = song.path;
+    }
+
+    // Play/pause the audio
+    function togglePlay() {
+      if (audioPlayer.paused) {
+        audioPlayer.play();
+      } else {
+        audioPlayer.pause();
+      }
+    }
+
+    // Move to the next song
+    function nextSong() {
+      currentSongIndex = (currentSongIndex + 1) % songs.length;
+      loadSong(currentSongIndex);
+      audioPlayer.play();
+    }
+
+    // Move to the previous song
+    function prevSong() {
+      currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
+      loadSong(currentSongIndex);
+      audioPlayer.play();
+    }
+
+    // Initialize the first song
+    loadSong(currentSongIndex);
+  </script>
+
+</body>
+</html>

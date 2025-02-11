@@ -192,3 +192,55 @@ body {
   border-radius: 34px;
   padding: 7px 15px;
 }
+
+.music-s {
+  width: 100%;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+}
+.music-bg {
+  width: 355px;
+  height: 150px;
+  background: linear-gradient(#ff7b7b,#fe3535);
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+}
+.music-box {
+  width: 45%;
+  height: 100%;
+}
+.mbone {
+  display: flex;
+  align-items: center;
+  padding-left: 12px;
+}
+.mbtwo {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+.music-album {
+  width: 130px;
+  height: 130px;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+.mbtwo h1,.mbtwo h3 {
+  margin: 0;
+  padding: 0;
+}
+.music-ppn {
+  margin-left: -10px;
+}
+.music-ppn * {
+  padding: 5px 10px;
+  position: relative;
+  z-index: 10;
+}
