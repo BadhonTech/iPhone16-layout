@@ -1,3 +1,12 @@
+const totalSongs = 25;
+const audioElements = []; // Store preloaded audio objects
+
+// Preload all songs
+for (let i = 1; i <= totalSongs; i++) {
+    const audio = new Audio(`assets/music/song${i}.mp3`);
+    audio.preload = "auto"; // Ensure the browser preloads the file
+    audioElements.push(audio);
+}
 // Generate a random number between 1 and 10
 const randomNum = Math.floor(Math.random() * 45) + 1;
 
@@ -221,3 +230,4 @@ nextButton.addEventListener("click", nextSong);
 
 // Load the first song when the page loads (without autoplay)
 loadSong(currentSongIndex);
+
