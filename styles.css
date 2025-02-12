@@ -244,3 +244,14 @@ body {
   position: relative;
   z-index: 10;
 }
+
+.music-s:before {
+  content: "Muisc";
+  position: absolute;
+  z-index: 10;
+  margin-top: 180px;
+  text-align: center;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+}
