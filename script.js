@@ -136,7 +136,7 @@ const songs = Array.from({ length: 25 }, (_, i) => `song${i + 1}.mp3`);
 
 // List of song titles and artists (optional, customize as needed)
 const songDetails = [
-  { "title": "Utshorgo Tasnif", "artist": "Bangla Song" },
+  { "title": "APT.", "artist": "ROSÉ & Bruno Mars" },
   { "title": "Stereo Hearts", "artist": "Gym Class Heroes ft. Adam Levine" },
   { "title": "Amar Dehokhan", "artist": "Odd Signature" },
   { "title": "Khola Janala", "artist": "Tahsin Ahmed" },
